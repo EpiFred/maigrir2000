@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Imc" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Poids : "
+            android:textColor="#FF0000"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/poid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Poids en Kg"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Taille : "
+            android:textColor="#FF0000"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/taille"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Taille en cm"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calcul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="calcImc"
+        android:textColor="@color/white"
+        android:text="Calculer l&apos;IMC" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:text="Attention : l&apos;interprétation de cette formule est applicable chez l’adulte de 18 à 65 ans.
+Elle n’est pas valable chez l’enfant, la femme enceinte ou certaines personnes très musclées." />
+
+    <ImageView
+        android:id="@+id/balance"
+        android:layout_width="153dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center" />
+
+</LinearLayout>

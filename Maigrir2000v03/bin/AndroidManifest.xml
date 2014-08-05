@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.maigrir2000v03"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/maigrir"
+        android:label="@string/app_name"
+        android:theme="@style/CustomActionBarTheme" >
+
+        <!-- Splash screen -->
+        <activity
+            android:name="com.maigrir2000v03.SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.Imc"
+            android:label="@string/app_name"
+            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.Regime"
+            android:label="@string/title_activity_regime"
+            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.Reseau"
+            android:label="@string/title_activity_reseau"
+            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.Recette"
+            android:label="@string/title_activity_recette"
+            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.Contact"
+            android:label="@string/title_activity_contact"
+            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.Nutritionniste"
+            android:label="@string/title_activity_nutritionniste"
+            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.Nutrition"
+            android:label="@string/title_activity_nutrition"
+            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.RegimeDescription"
+            android:label="@string/title_activity_desc_regime"
+            android:parentActivityName="com.maigrir2000v03.Regime" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.Regime" />
+        </activity>
+        <activity
+            android:name="com.maigrir2000v03.Contact_Details"
+            android:label="@string/title_activity_contact_details"
+            android:parentActivityName="com.maigrir2000v03.Contact" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.Contact" />
+        </activity>
+    </application>
+
+</manifest>
