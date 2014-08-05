@@ -122,11 +122,12 @@ public class Contact extends Activity {
 						contact.setCity(object.getString("VILLE"));
 						contact.setZipcode(object.getString("CODE_POSTAL"));
 						contact.setCountry(object.getString("PAYS"));
-						contact.setNumber1(null);
-						contact.setNumber2("0600000000");
+						contact.setNumber1("0662930575");
+						contact.setNumber2(null);
+						contact.setMail("freddy.louvier@gmail.com");
 						/*contact.setNumber1(object.getString("TELEPHONE"));
-						contact.setNumber2(object.getString("TELEPHONE_2"));*/
-						contact.setMail(object.getString("ADRESSE_MAIL"));
+						contact.setNumber2(object.getString("TELEPHONE_2"));
+						contact.setMail(object.getString("ADRESSE_MAIL"));*/
 						//contact.setImage(object.getString("PHOTO_NUT"));//EN SUSPENS JUSKA UNE IDEE MEILLEURE
 						ContactList.add(contact);
 					}

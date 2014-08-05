@@ -94,9 +94,8 @@ public class ContactDetails extends Activity {
 				emailIntent.setData(Uri.parse("mailto:"));
 				emailIntent.setType("text/plain");
 
-				emailIntent.putExtra(Intent.EXTRA_EMAIL, contactcontainer.getMail());
-				emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
-				emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
+				emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{ contactcontainer.getMail() });
+				emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Maigrir2000 - ");
 
 				try {
 					startActivity(Intent.createChooser(emailIntent, "Send mail..."));
