@@ -68,7 +68,7 @@ public class Contact extends Activity {
 				//PUTEXTRA\\
 				ContactContainer contactcontainer = (ContactContainer) adapter.getItem(position);
 				
-				Intent intent = new Intent(getApplicationContext(), Contact_Details.class);				
+				Intent intent = new Intent(getApplicationContext(), ContactDetails.class);				
 				intent.putExtra("contactlist", contactcontainer);
 				
 				startActivity(intent);

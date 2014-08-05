@@ -200,6 +200,8 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
+        /**  item name="android:actionBarTabStyle">@style/MyActionBarTabs</item> 
+         */
         public static final int CustomActionBarTheme=0x7f070002;
         public static final int MyActionBar=0x7f070003;
         /**  ActionBar tabs styles 

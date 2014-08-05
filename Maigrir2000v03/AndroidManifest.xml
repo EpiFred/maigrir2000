@@ -98,7 +98,7 @@
                 android:value="com.maigrir2000v03.Regime" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.Contact_Details"
+            android:name="com.maigrir2000v03.ContactDetails"
             android:label="@string/title_activity_contact_details"
             android:parentActivityName="com.maigrir2000v03.Contact" >
             <meta-data

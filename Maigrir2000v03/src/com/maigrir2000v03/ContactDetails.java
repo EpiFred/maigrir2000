@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
-public class Contact_Details extends Activity {
+public class ContactDetails extends Activity {
 
 	ContactContainer contactcontainer = new ContactContainer();
 
