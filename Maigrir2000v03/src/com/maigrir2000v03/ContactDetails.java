@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v4.app.NavUtils;
@@ -39,6 +40,9 @@ public class ContactDetails extends Activity {
 			contactcontainer = (ContactContainer) intent.getExtras().get("contactlist");
 		}
 
+		ImageView photo = (ImageView) findViewById(R.id.ContactPhoto);
+		photo.setBackgroundResource(R.drawable.logo_doctor);
+		
 		TextView nameText = (TextView) findViewById(R.id.name);
 		nameText.setText(contactcontainer.getName() + " " + contactcontainer.getSurname());
 
