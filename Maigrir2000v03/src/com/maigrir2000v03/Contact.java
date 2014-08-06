@@ -135,7 +135,7 @@ public class Contact extends Activity {
 			dialog.cancel();
 			adapter.notifyDataSetChanged();
 			if(result == false)
-				Toast.makeText(getApplicationContext(), "Problème ! Vérifiez votre connexion internet.", Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "Problème! Vérifiez votre connexion internet.", Toast.LENGTH_LONG).show();
 
 		}
 	}
