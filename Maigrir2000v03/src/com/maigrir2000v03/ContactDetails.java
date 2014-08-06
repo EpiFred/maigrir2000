@@ -98,7 +98,7 @@ public class ContactDetails extends Activity {
 				emailIntent.setData(Uri.parse("mailto:"));
 				emailIntent.setType("text/plain");
 
-				emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{ contactcontainer.getMail() });
+				emailIntent.putExtra(Intent.EXTRA_EMAIL, contactcontainer.getMail());
 				emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Maigrir2000 - ");
 
 				try {
