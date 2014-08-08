@@ -4,6 +4,7 @@ import com.maigrir2000v03.slidingmenu.model.ContactContainer;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.R.string;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
@@ -62,7 +63,7 @@ public class ContactDetails extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				if (contactcontainer.getNumber1() != null){
+				if (!contactcontainer.getNumber1().isEmpty()){
 					makeCall(contactcontainer.getNumber1());
 				}else{
 					Toast.makeText(getApplicationContext(), "Pas de numero fixe. Essayez le mobile.", Toast.LENGTH_SHORT).show();
@@ -78,7 +79,7 @@ public class ContactDetails extends Activity {
 			@Override
 			public void onClick(View arg0) {
 
-				if (contactcontainer.getNumber2() != null){
+				if (!contactcontainer.getNumber2().isEmpty()){
 					makeCall(contactcontainer.getNumber2());
 				}else{
 					Toast.makeText(getApplicationContext(), "Pas de numero mobile. Essayez le fixe.", Toast.LENGTH_SHORT).show();
@@ -95,14 +96,15 @@ public class ContactDetails extends Activity {
 				Log.i("Send email", "");
 
 				Intent emailIntent = new Intent(Intent.ACTION_SEND);
-				emailIntent.setData(Uri.parse("mailto:"));
-				emailIntent.setType("text/plain");
+				
 
+				//emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {contactcontainer.getMail()});
 				emailIntent.putExtra(Intent.EXTRA_EMAIL, contactcontainer.getMail());
 				emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Maigrir2000 - ");
+				emailIntent.setType("message/rfc822");
 
 				try {
-					startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+					startActivity(Intent.createChooser(emailIntent, "Ecrire au nutritionniste..."));
 					finish();
 					Log.i("Finished sending email...", "");
 				} catch (android.content.ActivityNotFoundException ex) {

@@ -200,7 +200,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Mes RDVs"
+                            android:text="Agenda"
                             android:textColor="@color/main_blue"
                             android:textSize="@dimen/textSize" />
                     </LinearLayout>

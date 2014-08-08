@@ -84,7 +84,7 @@ public class Imc extends Activity {
 					
 				}
 				else if (result > 24.9 && result < 29.9){
-					tvResult.setText("Resultat: " + result + "\nClassification : Surpoid");
+					tvResult.setText("Resultat: " + result + "\nClassification : Surpoids");
 					balance.setImageResource(R.drawable.balance_orange);
 				}
 				else if (result > 29.9 && result < 40){

@@ -26,6 +26,7 @@ public FacebookFragment(){}
 		super.onActivityCreated(savedInstanceState);
 		
 		WebView webview = (WebView) getView().findViewById(R.id.webView1);
+		webview.setBackgroundColor(0);
 		webview.loadUrl("https://www.facebook.com/maigrir2000");
 
 	}

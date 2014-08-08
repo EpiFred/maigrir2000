@@ -13,7 +13,7 @@ import android.support.v4.app.NavUtils;
 public class Regime extends ListActivity {
 
 	private String[] categories = {
-			"Le régime hypercalorique", 
+			"Le régime hypocalorique", 
 			"Le régime hyperprotéiné", 
 			"Le régime dissocié", 
 			"Les régimes restrictifs", 
