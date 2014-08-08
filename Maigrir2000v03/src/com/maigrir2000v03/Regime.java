@@ -42,7 +42,7 @@ public class Regime extends ListActivity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.simple_listview_row, categories);
 		ListView list = (ListView) findViewById(android.R.id.list);
 		
 		list.setAdapter(adapter);
