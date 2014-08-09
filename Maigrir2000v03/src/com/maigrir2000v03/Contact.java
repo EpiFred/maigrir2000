@@ -39,7 +39,7 @@ public class Contact extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
 		ContactList = new ArrayList<ContactContainer>();
-		new JSONAsyncTask().execute("http://sejelm.fr/m2000/getRecipes.php");
+		new JSONAsyncTask().execute("http://sejelm.fr/m2000/getContacts.php");
 
 		ListView listview = (ListView)findViewById(android.R.id.list);
 		adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, ContactList);
