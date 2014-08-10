@@ -19,6 +19,7 @@ public class HomeFragment extends Fragment {
 	private ImageButton Nutritionniste;
 	private ImageButton Nutrition;
 	private ImageButton Regime;
+	private ImageButton Agenda;
 
 
 	public HomeFragment(){}
@@ -108,6 +109,16 @@ public class HomeFragment extends Fragment {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(getActivity(), Regime.class));
+
+			}
+		});
+		Agenda = (ImageButton) getView().findViewById(R.id.agenda);
+		Agenda.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(getActivity(), Agenda.class));
 
 			}
 		});

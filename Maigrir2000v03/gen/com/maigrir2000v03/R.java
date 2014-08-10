@@ -376,6 +376,11 @@ containing a value of this type.
         public static final int LRspace=0x7f090005;
         /**  Default screen margins, per the Android Design guidelines. 
 
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
@@ -456,109 +461,119 @@ containing a value of this type.
         public static final int tab_selector=0x7f02003f;
     }
     public static final class id {
-        public static final int ContactPhoto=0x7f070014;
-        public static final int LinearLayout1=0x7f07003b;
-        public static final int ListAlimentation=0x7f07002c;
-        public static final int ListNutriment=0x7f070039;
-        public static final int action_settings=0x7f070040;
-        public static final int address=0x7f070016;
-        public static final int agenda=0x7f070038;
-        public static final int bFixe=0x7f070018;
-        public static final int bMail=0x7f07001a;
-        public static final int bMobile=0x7f070019;
-        public static final int balance=0x7f07001f;
+        public static final int ContactPhoto=0x7f070019;
+        public static final int LinearLayout1=0x7f07003e;
+        public static final int ListAlimentation=0x7f070030;
+        public static final int ListNutriment=0x7f07003c;
+        public static final int action_settings=0x7f070045;
+        public static final int address=0x7f07001b;
+        public static final int agenda=0x7f07003b;
+        public static final int bFixe=0x7f07001d;
+        public static final int bMail=0x7f07001f;
+        public static final int bMobile=0x7f07001e;
+        public static final int balance=0x7f070024;
         public static final int book_now=0x7f070010;
         public static final int buyButton=0x7f07000a;
         public static final int buy_now=0x7f07000f;
         public static final int buy_with_google=0x7f07000e;
-        public static final int calcul=0x7f07001d;
+        public static final int calcul=0x7f070022;
         public static final int classic=0x7f070011;
-        public static final int contact=0x7f070034;
-        public static final int contentRegime=0x7f070028;
-        public static final int counter=0x7f07002b;
-        public static final int drawer_layout=0x7f070022;
-        public static final int email=0x7f070020;
-        public static final int frame_container=0x7f070023;
+        public static final int contact=0x7f070037;
+        public static final int contentRegime=0x7f07002d;
+        public static final int counter=0x7f07002f;
+        public static final int dateEvent=0x7f070017;
+        public static final int desc1=0x7f070015;
+        public static final int desc2=0x7f070018;
+        public static final int drawer_layout=0x7f070027;
+        public static final int email=0x7f070025;
+        public static final int frame_container=0x7f070028;
         public static final int grayscale=0x7f070012;
         public static final int holo_dark=0x7f070005;
         public static final int holo_light=0x7f070006;
         public static final int hybrid=0x7f070004;
-        public static final int icon=0x7f070029;
-        public static final int imc=0x7f070036;
-        public static final int imgLogo=0x7f07002d;
-        public static final int imgbanniere=0x7f07002f;
-        public static final int ivImage=0x7f07003c;
-        public static final int list_slidermenu=0x7f070024;
-        public static final int map=0x7f070026;
+        public static final int icon=0x7f07002e;
+        public static final int imc=0x7f070039;
+        public static final int imgLogo=0x7f070031;
+        public static final int imgbanniere=0x7f070033;
+        public static final int ivImage=0x7f070041;
+        public static final int list_slidermenu=0x7f070029;
+        public static final int map=0x7f07002b;
         public static final int match_parent=0x7f07000c;
-        public static final int mobile=0x7f070021;
+        public static final int mobile=0x7f070026;
         public static final int monochrome=0x7f070013;
-        public static final int name=0x7f070015;
-        public static final int nextAddress=0x7f070017;
+        public static final int name=0x7f07001a;
+        public static final int nextAddress=0x7f07001c;
         public static final int none=0x7f070000;
         public static final int normal=0x7f070001;
-        public static final int nutrition=0x7f070035;
-        public static final int nutritionniste=0x7f070032;
-        public static final int pager=0x7f070025;
-        public static final int poid=0x7f07001b;
+        public static final int nutrition=0x7f070038;
+        public static final int nutritionniste=0x7f070016;
+        public static final int pager=0x7f07002a;
+        public static final int poid=0x7f070020;
         public static final int production=0x7f070007;
-        public static final int recettes=0x7f070031;
-        public static final int regime=0x7f070037;
-        public static final int reseau=0x7f070033;
-        public static final int result=0x7f07001e;
+        public static final int recettes=0x7f070035;
+        public static final int regime=0x7f07003a;
+        public static final int reseau=0x7f070036;
+        public static final int result=0x7f070023;
         public static final int sandbox=0x7f070008;
         public static final int satellite=0x7f070002;
-        public static final int section_label=0x7f07003a;
+        public static final int section_label=0x7f07003d;
         public static final int selectionDetails=0x7f07000b;
         public static final int strict_sandbox=0x7f070009;
-        public static final int taille=0x7f07001c;
+        public static final int taille=0x7f070021;
         public static final int terrain=0x7f070003;
-        public static final int test=0x7f070030;
-        public static final int title=0x7f07002a;
-        public static final int titleRegime=0x7f070027;
-        public static final int tvCity=0x7f07003f;
-        public static final int tvName=0x7f07003d;
-        public static final int tvSurname=0x7f07003e;
-        public static final int webView1=0x7f07002e;
+        public static final int test=0x7f070034;
+        public static final int title=0x7f070014;
+        public static final int titleRegime=0x7f07002c;
+        public static final int tvCity=0x7f070044;
+        public static final int tvDateEvent=0x7f070040;
+        public static final int tvEvent=0x7f07003f;
+        public static final int tvName=0x7f070042;
+        public static final int tvSurname=0x7f070043;
+        public static final int webView1=0x7f070032;
         public static final int wrap_content=0x7f07000d;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_contact=0x7f030000;
-        public static final int activity_contact_details=0x7f030001;
-        public static final int activity_imc=0x7f030002;
-        public static final int activity_list_contact=0x7f030003;
-        public static final int activity_main=0x7f030004;
-        public static final int activity_nutrition=0x7f030005;
-        public static final int activity_nutritionniste=0x7f030006;
-        public static final int activity_recette=0x7f030007;
-        public static final int activity_regime=0x7f030008;
-        public static final int activity_regime_desc=0x7f030009;
-        public static final int activity_reseau=0x7f03000a;
-        public static final int drawer_list_item=0x7f03000b;
-        public static final int fragment_about=0x7f03000c;
-        public static final int fragment_alimentation=0x7f03000d;
-        public static final int fragment_facebook=0x7f03000e;
-        public static final int fragment_home=0x7f03000f;
-        public static final int fragment_nutriment=0x7f030010;
-        public static final int fragment_nutrition_dummy=0x7f030011;
-        public static final int simple_listview_row=0x7f030012;
-        public static final int splash_screen=0x7f030013;
-        public static final int view_contact=0x7f030014;
+        public static final int activity_agenda=0x7f030000;
+        public static final int activity_agenda_details=0x7f030001;
+        public static final int activity_contact=0x7f030002;
+        public static final int activity_contact_details=0x7f030003;
+        public static final int activity_imc=0x7f030004;
+        public static final int activity_list_contact=0x7f030005;
+        public static final int activity_main=0x7f030006;
+        public static final int activity_nutrition=0x7f030007;
+        public static final int activity_nutritionniste=0x7f030008;
+        public static final int activity_recette=0x7f030009;
+        public static final int activity_regime=0x7f03000a;
+        public static final int activity_regime_desc=0x7f03000b;
+        public static final int activity_reseau=0x7f03000c;
+        public static final int drawer_list_item=0x7f03000d;
+        public static final int fragment_about=0x7f03000e;
+        public static final int fragment_alimentation=0x7f03000f;
+        public static final int fragment_facebook=0x7f030010;
+        public static final int fragment_home=0x7f030011;
+        public static final int fragment_nutriment=0x7f030012;
+        public static final int fragment_nutrition_dummy=0x7f030013;
+        public static final int simple_listview_row=0x7f030014;
+        public static final int splash_screen=0x7f030015;
+        public static final int view_agenda=0x7f030016;
+        public static final int view_contact=0x7f030017;
     }
     public static final class menu {
-        public static final int contact=0x7f0a0000;
-        public static final int contact__details=0x7f0a0001;
-        public static final int imc=0x7f0a0002;
-        public static final int main=0x7f0a0003;
-        public static final int nutrition=0x7f0a0004;
-        public static final int nutritionniste=0x7f0a0005;
-        public static final int recette=0x7f0a0006;
-        public static final int regime=0x7f0a0007;
-        public static final int regime_description=0x7f0a0008;
-        public static final int reseau=0x7f0a0009;
+        public static final int agenda=0x7f0a0000;
+        public static final int agenda_details=0x7f0a0001;
+        public static final int contact=0x7f0a0002;
+        public static final int contact__details=0x7f0a0003;
+        public static final int imc=0x7f0a0004;
+        public static final int main=0x7f0a0005;
+        public static final int nutrition=0x7f0a0006;
+        public static final int nutritionniste=0x7f0a0007;
+        public static final int recette=0x7f0a0008;
+        public static final int regime=0x7f0a0009;
+        public static final int regime_description=0x7f0a000a;
+        public static final int reseau=0x7f0a000b;
     }
     public static final class string {
         public static final int action_settings=0x7f06001b;
@@ -658,6 +673,8 @@ containing a value of this type.
         public static final int hello_world=0x7f06001c;
         public static final int title_accueil=0x7f060025;
         public static final int title_activity_about=0x7f06001e;
+        public static final int title_activity_agenda=0x7f06002c;
+        public static final int title_activity_agenda_details=0x7f06002d;
         public static final int title_activity_contact=0x7f060022;
         public static final int title_activity_contact_details=0x7f06002b;
         public static final int title_activity_desc_regime=0x7f060029;

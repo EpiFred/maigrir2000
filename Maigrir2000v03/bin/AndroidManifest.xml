@@ -34,7 +34,7 @@
 
         <!-- Splash screen -->
         <activity
-            android:name="com.maigrir2000v03.SplashScreen"
+            android:name=".SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
@@ -45,77 +45,77 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.maigrir2000v03.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.maigrir2000v03.Imc"
+            android:name=".Imc"
             android:label="@string/app_name"
-            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.Regime"
+            android:name=".Regime"
             android:label="@string/title_activity_regime"
-            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.Reseau"
+            android:name=".Reseau"
             android:label="@string/title_activity_reseau"
-            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.Recette"
+            android:name=".Recette"
             android:label="@string/title_activity_recette"
-            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.Contact"
+            android:name=".Contact"
             android:label="@string/title_activity_contact"
-            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.Nutritionniste"
+            android:name=".Nutritionniste"
             android:label="@string/title_activity_nutritionniste"
-            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.Nutrition"
+            android:name=".Nutrition"
             android:label="@string/title_activity_nutrition"
-            android:parentActivityName="com.maigrir2000v03.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.RegimeDescription"
+            android:name=".RegimeDescription"
             android:label="@string/title_activity_desc_regime"
-            android:parentActivityName="com.maigrir2000v03.Regime" >
+            android:parentActivityName=".Regime" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Regime" />
         </activity>
         <activity
-            android:name="com.maigrir2000v03.ContactDetails"
+            android:name=".ContactDetails"
             android:label="@string/title_activity_contact_details"
-            android:parentActivityName="com.maigrir2000v03.Contact" >
+            android:parentActivityName=".Contact" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Contact" />
@@ -127,6 +127,23 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBDZKSPxZRZIimg1q7apRATDY_090IDdlY" />
+
+        <activity
+            android:name=".Agenda"
+            android:label="@string/title_activity_agenda"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AgendaDetails"
+            android:label="@string/title_activity_agenda_details"
+            android:parentActivityName=".Agenda" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.Agenda" />
+        </activity>
     </application>
 
 </manifest>
