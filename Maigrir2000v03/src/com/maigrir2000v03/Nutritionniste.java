@@ -1,7 +1,12 @@
 package com.maigrir2000v03;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -11,6 +16,8 @@ import android.support.v4.app.NavUtils;
 
 public class Nutritionniste extends Activity {
 
+	static final LatLng LYON = new LatLng(45.750, 4.850);
+	static final LatLng VENISSIEUX = new LatLng(45.700, 4.885);
 	private GoogleMap gmap;
 
 	@Override
@@ -21,6 +28,14 @@ public class Nutritionniste extends Activity {
 		setupActionBar();
 		
 		gmap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		Marker lyon = gmap.addMarker(new MarkerOptions().position(LYON).title("Lyon"));
+		Marker ven = gmap.addMarker(new MarkerOptions().position(VENISSIEUX).title("Vénissieux").snippet("692 la trick"));
+		
+		// Move the camera instantly to Lyon with a zoom of 15.
+		gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(LYON, 15));
+		
+		// Zoom in, animating the camera.
+		gmap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
 	}
 
 

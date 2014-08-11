@@ -13,6 +13,8 @@
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/view_contact"/>
+        tools:listitem="@layout/view_contact"
+        android:divider="@color/white"
+        android:dividerHeight="2dip"/>
 
 </RelativeLayout>
