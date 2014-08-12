@@ -6,6 +6,7 @@ public class ContactContainer implements Serializable {
 	
 	private static final long serialVersionUID = 69200;
 
+	private int id;
 	private String name;
 	private String surname;
 	private String address;
@@ -20,10 +21,19 @@ public class ContactContainer implements Serializable {
 	public ContactContainer(){
 
 	}
+	
+	public ContactContainer(int id, String name, String surname, String number1)
+	{
+		this.id = id;
+		this.name = name;
+		this.surname = surname;
+		this.number1 = number1;
+	}
 
-	public ContactContainer(String name, String surname, String address, String city, String zipcode,
+	public ContactContainer(int id, String name, String surname, String address, String city, String zipcode,
 			String country, String number1, String number2, String mail, String image){
 
+		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.address = address;
@@ -34,6 +44,14 @@ public class ContactContainer implements Serializable {
 		this.number2 = number2;
 		this.mail = mail;
 		this.image = image;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

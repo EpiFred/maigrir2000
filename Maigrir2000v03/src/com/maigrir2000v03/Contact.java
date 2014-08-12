@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.maigrir2000v03.helper.DatabaseHandler;
 import com.maigrir2000v03.slidingmenu.adapter.ContactAdapter;
 import com.maigrir2000v03.slidingmenu.model.ContactContainer;
 
@@ -33,16 +34,22 @@ public class Contact extends Activity {
 	ArrayList<ContactContainer> ContactList;
 
 	ContactAdapter adapter;
+	
+	DatabaseHandler db;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
+		
+		db = new DatabaseHandler(this);
 		ContactList = new ArrayList<ContactContainer>();
-		new JSONAsyncTask().execute("http://sejelm.fr/m2000/getContacts.php");
+		if (db.getAllContacts().isEmpty() == true)
+			new JSONAsyncTask().execute("http://sejelm.fr/m2000/getContacts.php");
 
 		ListView listview = (ListView)findViewById(android.R.id.list);
-		adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, ContactList);
+		adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, db.getAllContacts());
+		//adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, ContactList);
 
 		listview.setAdapter(adapter);
 
@@ -113,8 +120,9 @@ public class Contact extends Activity {
 						contact.setNumber1(object.getString("TELEPHONE"));
 						contact.setNumber2(object.getString("TELEPHONE_2"));
 						contact.setMail(object.getString("ADRESSE_MAIL"));
+						db.addContact(contact);
 						//contact.setImage(object.getString("PHOTO_NUT"));//EN SUSPENS JUSKA UNE IDEE MEILLEURE
-						ContactList.add(contact);
+						//ContactList.add(contact);
 					}
 					return true;
 				}
