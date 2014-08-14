@@ -31,6 +31,8 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class Contact extends Activity {
 
+	private static final String ContactURL = "http://sejelm.fr/m2000/getContacts.php";
+	
 	ArrayList<ContactContainer> ContactList;
 
 	ContactAdapter adapter;
@@ -45,10 +47,12 @@ public class Contact extends Activity {
 		db = new DatabaseHandler(this);
 		ContactList = new ArrayList<ContactContainer>();
 		if (db.getAllContacts().isEmpty() == true)
-			new JSONAsyncTask().execute("http://sejelm.fr/m2000/getContacts.php");
+			new JSONAsyncTask().execute(ContactURL);
 
 		ListView listview = (ListView)findViewById(android.R.id.list);
-		adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, db.getAllContacts());
+		ContactList = db.getAllContacts();
+		adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, ContactList);
+
 		//adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, ContactList);
 
 		listview.setAdapter(adapter);
@@ -122,7 +126,7 @@ public class Contact extends Activity {
 						contact.setMail(object.getString("ADRESSE_MAIL"));
 						db.addContact(contact);
 						//contact.setImage(object.getString("PHOTO_NUT"));//EN SUSPENS JUSKA UNE IDEE MEILLEURE
-						//ContactList.add(contact);
+						ContactList.add(contact);
 					}
 					return true;
 				}

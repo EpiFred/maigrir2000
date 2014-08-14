@@ -144,6 +144,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Agenda" />
         </activity>
+        <activity
+            android:name=".NutrimentDetails"
+            android:label="@string/title_activity_nutriment_details"
+            android:parentActivityName=".Nutrition" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.Nutrition" />
+        </activity>
+        <activity
+            android:name=".AlimentationDetails"
+            android:label="@string/title_activity_alimentation_details"
+            android:parentActivityName=".Nutrition" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.Nutrition" />
+        </activity>
     </application>
 
 </manifest>

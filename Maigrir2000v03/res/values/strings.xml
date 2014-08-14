@@ -23,5 +23,8 @@
     <string name="title_activity_contact_details">Contact - Détails</string>
     <string name="title_activity_agenda">Agenda</string>
     <string name="title_activity_agenda_details">AgendaDetails</string>
+    <string name="title_activity_nutrition_details">NutritionDetails</string>
+    <string name="title_activity_nutriment_details">NutrimentDetails</string>
+    <string name="title_activity_alimentation_details">AlimentationDetails</string>
 
 </resources>
