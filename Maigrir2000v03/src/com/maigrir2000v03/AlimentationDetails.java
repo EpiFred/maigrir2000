@@ -11,21 +11,24 @@ public class AlimentationDetails extends Activity {
 	private TextView AlimentationDesc;
 	private TextView AlimentationSavoirTitle;
 	private TextView AlimentationSavoir;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_alimentation_details);
-		
+
 		AlimentationDesc = (TextView) findViewById(R.id.AlimentationDesc);
 		AlimentationSavoirTitle = (TextView) findViewById(R.id.AlimentationSavoirTitle);
 		AlimentationSavoir = (TextView) findViewById(R.id.AlimentationSavoir);
-		
+
 		this.setTitle(getIntent().getExtras().getString("alimentation"));
-		
+
 		AlimentationDesc.setText(getIntent().getExtras().getString("alimentationDetails"));
-		AlimentationSavoirTitle.setText("A Savoir sur les " + getIntent().getExtras().getString("alimentation"));
-		AlimentationSavoir.setText(getIntent().getExtras().getString("alimentationSavoir"));
+		if (!this.getTitle().equals("Composer son repas"))
+		{
+			AlimentationSavoirTitle.setText("A Savoir sur " + getIntent().getExtras().getString("alimentation"));
+			AlimentationSavoir.setText(getIntent().getExtras().getString("alimentationSavoir"));
+		}
 	}
 
 	@Override

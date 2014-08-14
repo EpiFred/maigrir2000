@@ -26,5 +26,6 @@
     <string name="title_activity_nutrition_details">NutritionDetails</string>
     <string name="title_activity_nutriment_details">NutrimentDetails</string>
     <string name="title_activity_alimentation_details">AlimentationDetails</string>
+    <string name="title_activity_recette_details">RecetteDetails</string>
 
 </resources>

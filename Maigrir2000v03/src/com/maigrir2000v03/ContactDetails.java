@@ -1,12 +1,25 @@
 package com.maigrir2000v03;
 
+import java.io.InputStream;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import com.maigrir2000v03.RecetteDetails.TheTask;
 import com.maigrir2000v03.slidingmenu.model.ContactContainer;
 
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.R.string;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +38,10 @@ public class ContactDetails extends Activity {
 	private Button bFixe;
 	private Button bMobile;
 	private Button bMail;
+	
+	ProgressDialog pd;
+	ImageView photo;
+	Bitmap image ;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +58,11 @@ public class ContactDetails extends Activity {
 			contactcontainer = (ContactContainer) intent.getExtras().get("contactlist");
 		}
 
-		ImageView photo = (ImageView) findViewById(R.id.ContactPhoto);
-		photo.setBackgroundResource(R.drawable.logo_doctor);
+		photo = (ImageView) findViewById(R.id.ContactPhoto);
+		pd = new ProgressDialog(this);
+	    pd.setMessage("Loading..");
+	    new TheTask().execute();
+		//photo.setBackgroundResource(R.drawable.logo_doctor);
 		
 		TextView nameText = (TextView) findViewById(R.id.name);
 		nameText.setText(contactcontainer.getName() + " " + contactcontainer.getSurname());
@@ -123,6 +143,89 @@ public class ContactDetails extends Activity {
 		startActivity(callIntent);
 	}
 
+	class TheTask extends AsyncTask<Void,Void,Void>
+	{
+
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+			pd.show();
+		}
+
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			// TODO Auto-generated method stub
+			try
+			{
+				image = downloadBitmap(contactcontainer.getImage());
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			pd.dismiss();
+			if(image!=null)
+			{
+				photo.setImageBitmap(image);
+			}
+
+		}   
+	}
+	private Bitmap downloadBitmap(String url) {
+		// initilize the default HTTP client object
+		final DefaultHttpClient client = new DefaultHttpClient();
+
+		//forming a HttoGet request 
+		final HttpGet getRequest = new HttpGet(url);
+		try {
+
+			HttpResponse response = client.execute(getRequest);
+
+			//check 200 OK for success
+			final int statusCode = response.getStatusLine().getStatusCode();
+
+			if (statusCode != HttpStatus.SC_OK) {
+				Log.w("ImageDownloader", "Error " + statusCode + " while retrieving bitmap from " + url);
+				return null;
+
+			}
+
+			final HttpEntity entity = response.getEntity();
+			if (entity != null) {
+				InputStream inputStream = null;
+				try {
+					// getting contents from the stream 
+					inputStream = entity.getContent();
+
+					// decoding stream data back into image Bitmap that android understands
+					image = BitmapFactory.decodeStream(inputStream);
+
+
+				} finally {
+					if (inputStream != null) {
+						inputStream.close();
+					}
+					entity.consumeContent();
+				}
+			}
+		} catch (Exception e) {
+			// You Could provide a more explicit error message for IOException
+			getRequest.abort();
+			Log.e("ImageDownloader", "Something went wrong while" + " retrieving bitmap from " + url + e.toString());
+		} 
+
+		return image;
+	}
+	
 	/**
 	 * Set up the {@link android.app.ActionBar}.
 	 */

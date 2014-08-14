@@ -32,18 +32,18 @@ import android.widget.AdapterView.OnItemClickListener;
 public class Contact extends Activity {
 
 	private static final String ContactURL = "http://sejelm.fr/m2000/getContacts.php";
-	
+
 	ArrayList<ContactContainer> ContactList;
 
 	ContactAdapter adapter;
-	
+
 	DatabaseHandler db;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
-		
+
 		db = new DatabaseHandler(this);
 		ContactList = new ArrayList<ContactContainer>();
 		if (db.getAllContacts().isEmpty() == true)
@@ -63,13 +63,13 @@ public class Contact extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
 				// TODO Auto-generated method stub
 				//Toast.makeText(getApplicationContext(), ContactList.get(position).getName(), Toast.LENGTH_LONG).show();
-				
+
 				//PUTEXTRA\\
 				ContactContainer contactcontainer = (ContactContainer) adapter.getItem(position);
-				
+
 				Intent intent = new Intent(getApplicationContext(), ContactDetails.class);				
 				intent.putExtra("contactlist", contactcontainer);
-				
+
 				startActivity(intent);
 			}
 		});
@@ -124,8 +124,8 @@ public class Contact extends Activity {
 						contact.setNumber1(object.getString("TELEPHONE"));
 						contact.setNumber2(object.getString("TELEPHONE_2"));
 						contact.setMail(object.getString("ADRESSE_MAIL"));
+						contact.setImage(object.getString("PHOTO_NUT"));//EN SUSPENS JUSKA UNE IDEE MEILLEURE
 						db.addContact(contact);
-						//contact.setImage(object.getString("PHOTO_NUT"));//EN SUSPENS JUSKA UNE IDEE MEILLEURE
 						ContactList.add(contact);
 					}
 					return true;

@@ -13,27 +13,27 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.maigrir2000v03.Contact.JSONAsyncTask;
-import com.maigrir2000v03.helper.DatabaseHandler;
-import com.maigrir2000v03.slidingmenu.adapter.RecetteAdapter;
-import com.maigrir2000v03.slidingmenu.model.RecetteContainer;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.net.ParseException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.maigrir2000v03.helper.DatabaseHandler;
+import com.maigrir2000v03.slidingmenu.adapter.RecetteAdapter;
+import com.maigrir2000v03.slidingmenu.model.RecetteContainer;
 
 public class Recette extends Activity {
 
@@ -101,6 +101,19 @@ public class Recette extends Activity {
 				}
 				adapter = new RecetteAdapter(Recette.this, R.layout.view_recette, recettes);
 				list.setAdapter(adapter);
+				list.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> parent, View view,
+							int position, long id) {
+						// TODO Auto-generated method stub
+						RecetteContainer recette = (RecetteContainer) adapter.getItem(position);
+						Intent i = new Intent(Recette.this, RecetteDetails.class);
+						i.putExtra("recette", recette);
+						startActivity(i);
+					}
+					
+				});
 			}
 
 			@Override

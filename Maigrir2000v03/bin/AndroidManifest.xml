@@ -160,6 +160,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Nutrition" />
         </activity>
+        <activity
+            android:name=".RecetteDetails"
+            android:label="@string/title_activity_recette_details"
+            android:parentActivityName=".Recette" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maigrir2000v03.Recette" />
+        </activity>
     </application>
 
 </manifest>
