@@ -248,6 +248,10 @@ public class Recette extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
+		case R.id.action_recette:
+			db.deleteRecette();
+			new JSONAsyncTask().execute(RecettesURL);
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

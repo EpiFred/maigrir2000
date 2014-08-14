@@ -361,4 +361,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		// return count
 		return cursor.getCount();
 	}
+	
+	public void deleteRecette() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.delete(TABLE_RECETTES, null, null);
+		db.close();
+	}
 }
