@@ -16,27 +16,36 @@ import android.support.v4.app.NavUtils;
 
 public class Nutritionniste extends Activity {
 
-	static final LatLng LYON = new LatLng(45.750, 4.850);
-	static final LatLng VENISSIEUX = new LatLng(45.700, 4.885);
-	private GoogleMap gmap;
+	//static final LatLng name = new LatLng(lat, long);
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_nutritionniste);
-		// Show the Up button in the action bar.
-		setupActionBar();
-		
-		gmap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-		Marker lyon = gmap.addMarker(new MarkerOptions().position(LYON).title("Lyon"));
-		Marker ven = gmap.addMarker(new MarkerOptions().position(VENISSIEUX).title("Vénissieux").snippet("692 la trick"));
-		
-		// Move the camera instantly to Lyon with a zoom of 15.
-		gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(LYON, 15));
-		
-		// Zoom in, animating the camera.
-		gmap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
-	}
+		static final LatLng CLagouche = new LatLng(45.7899723, 4.857660200000055);
+		static final LatLng FAnterieux = new LatLng(45.6776853, 4.770113199999969);
+		static final LatLng VOertel = new LatLng(45.7528096, 4.8520780999999715);
+		static final LatLng IBrivet = new LatLng(47.0623377, 5.494086899999957);
+		private GoogleMap gmap;
+
+		@Override
+		protected void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.activity_nutritionniste);
+			// Show the Up button in the action bar.
+			setupActionBar();
+			
+			gmap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+			gmap.setMyLocationEnabled(true);
+			
+			Marker clagouche = gmap.addMarker(new MarkerOptions().position(CLagouche).title("Cécile Lagouche").snippet("122 Grande rue de Saint Clair - 69300 CALUIRE"));
+			Marker fanterieux = gmap.addMarker(new MarkerOptions().position(FAnterieux).title("Florence Antérieux").snippet("2A route de Lyon - 69530 Brignais "));
+			Marker voertel = gmap.addMarker(new MarkerOptions().position(VOertel).title("Valérie Oertel").snippet("310 rue André Philip - 69003 Lyon"));
+			Marker ibrivet = gmap.addMarker(new MarkerOptions().position(IBrivet).title("Isabelle Brivet").snippet("447, Avenue du Maréchal Juin - 39100 Dole (Crissey)"));
+			
+			// Move the camera instantly to Lyon with a zoom of 15.
+			//gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(LYON, 15));
+			
+			// Zoom in, animating the camera.
+			//gmap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);*/
+		}
+
 
 
 	/**
