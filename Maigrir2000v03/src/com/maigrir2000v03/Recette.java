@@ -47,7 +47,7 @@ public class Recette extends Activity {
 	
 	private DatabaseHandler db;
 	
-	private static final String RecettesURL = "http://sejelm.fr/m2000/getRecipes.php";
+	private static final String RecettesURL = "http://goodme.fr/app/getRecipes.php";
 	
 	private String[] categoriesIndex = {
 			"aperitif",
@@ -60,7 +60,7 @@ public class Recette extends Activity {
 			"accompagnements de plats",
 			"desserts",
 			"boissons",
-			"Assaisonnements",
+			"assaisonnements",
 			"en-cas collation",
 			"recettes pour le soir"
 	};

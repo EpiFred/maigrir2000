@@ -23,6 +23,19 @@ public class Nutritionniste extends Activity {
 	static final LatLng FAnterieux = new LatLng(45.6776853, 4.770113199999969);
 	static final LatLng VOertel = new LatLng(45.7528096, 4.8520780999999715);
 	static final LatLng IBrivet = new LatLng(47.0623377, 5.494086899999957);
+	
+	static final LatLng EPorcher = new LatLng(48.804286, 2.1583619000000454);
+	static final LatLng SLSViolant = new LatLng(48.908587, 2.149776999999972);
+	static final LatLng EGouacide = new LatLng(48.691442, 2.3750451999999314);
+	static final LatLng EPorcher2 = new LatLng(48.80753439999999, 2.186664999999948);
+	static final LatLng RSantarelli = new LatLng(43.5753306, 1.4633410999999796);
+	static final LatLng MPagliardini = new LatLng(44.8371438, -0.5768442999999479);
+	static final LatLng ASaunois = new LatLng(48.120219, -1.6547044999999798);
+	static final LatLng AAdam = new LatLng(50.67637089999999, 3.1419255000000703);
+	static final LatLng AMougenot = new LatLng(48.68008409999999, 6.190898199999992);
+	static final LatLng OGodard = new LatLng(47.804899, 3.532801000000063);
+	static final LatLng CdvIweins = new LatLng(44.5796551, 4.731993099999954);
+	
 	private GoogleMap gmap;
 
 	@Override
@@ -39,7 +52,13 @@ public class Nutritionniste extends Activity {
 		Marker fanterieux = gmap.addMarker(new MarkerOptions().position(FAnterieux).title("Florence Antérieux").snippet("2A route de Lyon - 69530 Brignais "));
 		Marker voertel = gmap.addMarker(new MarkerOptions().position(VOertel).title("Valérie Oertel").snippet("310 rue André Philip - 69003 Lyon"));
 		Marker ibrivet = gmap.addMarker(new MarkerOptions().position(IBrivet).title("Isabelle Brivet").snippet("447, Avenue du Maréchal Juin - 39100 Dole (Crissey)"));
-
+		Marker eporcher = gmap.addMarker(new MarkerOptions().position(EPorcher).title("Eve Porcher").snippet("Cabinet Diététique 15 Place Royal - 78000 VERSAILLES"));
+		Marker eporcher2 = gmap.addMarker(new MarkerOptions().position(EPorcher2).title("Eve Porcher").snippet("1713, Avenue Roger Salengro 3ème étage (ascenseur) - 92370 Chaville"));
+		Marker slsviolant = gmap.addMarker(new MarkerOptions().position(SLSViolant).title("Sylvie Le Souder-Violant").snippet("78360 MONTESSON"));
+		Marker egouacide = gmap.addMarker(new MarkerOptions().position(EGouacide).title("Emeline Gouacide").snippet("5 rue du docteur vinot - 91260 Juvisy sur Orge"));
+		Marker rsantarelli = gmap.addMarker(new MarkerOptions().position(RSantarelli).title("Raphaëlle Santarelli").snippet("8 rue Claude Forbin - 31400 Toulouse"));
+		
+		
 		// Move the camera instantly to Lyon with a zoom of 15.
 		gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(France, 5));
 

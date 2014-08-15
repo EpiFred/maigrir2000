@@ -43,7 +43,7 @@ public class Agenda extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_agenda);
 		AgendaList = new ArrayList<AgendaContainer>();
-		new JSONAsyncTask().execute("http://sejelm.fr/m2000/getAgenda.php");
+		new JSONAsyncTask().execute("http://goodme.fr/app/getAgenda.php");
 
 		ListView listview = (ListView)findViewById(android.R.id.list);
 		adapter = new AgendaAdapter(getApplicationContext(), R.layout.view_agenda, AgendaList);

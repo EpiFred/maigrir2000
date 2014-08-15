@@ -31,7 +31,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class Contact extends Activity {
 
-	private static final String ContactURL = "http://sejelm.fr/m2000/getContacts.php";
+	private static final String ContactURL = "http://goodme.fr/app/getContacts.php";
 
 	ArrayList<ContactContainer> ContactList;
 
@@ -123,6 +123,7 @@ public class Contact extends Activity {
 						contact.setCountry(object.getString("PAYS"));
 						contact.setNumber1(object.getString("TELEPHONE"));
 						contact.setNumber2(object.getString("TELEPHONE_2"));
+						//contact.setMail("freddy.louvier@gmail.com");
 						contact.setMail(object.getString("ADRESSE_MAIL"));
 						contact.setImage(object.getString("PHOTO_NUT"));//EN SUSPENS JUSKA UNE IDEE MEILLEURE
 						db.addContact(contact);

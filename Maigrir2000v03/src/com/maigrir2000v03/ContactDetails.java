@@ -64,6 +64,8 @@ public class ContactDetails extends Activity {
 	    new TheTask().execute();
 		//photo.setBackgroundResource(R.drawable.logo_doctor);
 		
+	    this.setTitle(contactcontainer.getName() + " " + contactcontainer.getSurname());
+	    
 		TextView nameText = (TextView) findViewById(R.id.name);
 		nameText.setText(contactcontainer.getName() + " " + contactcontainer.getSurname());
 
@@ -117,9 +119,8 @@ public class ContactDetails extends Activity {
 
 				Intent emailIntent = new Intent(Intent.ACTION_SEND);
 				
-
 				//emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {contactcontainer.getMail()});
-				emailIntent.putExtra(Intent.EXTRA_EMAIL, contactcontainer.getMail());
+				emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {contactcontainer.getMail()});
 				emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Maigrir2000 - ");
 				emailIntent.setType("message/rfc822");
 

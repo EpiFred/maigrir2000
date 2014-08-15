@@ -26,6 +26,8 @@ public class AgendaDetails extends Activity {
 					agendacontainer = (AgendaContainer) intent.getExtras().get("AgendaList");
 				}
 				
+				this.setTitle(agendacontainer.getTitle());
+				
 				TextView titleText = (TextView) findViewById(R.id.title);
 				titleText.setText(agendacontainer.getTitle());
 
