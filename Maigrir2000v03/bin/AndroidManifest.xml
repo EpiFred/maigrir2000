@@ -46,12 +46,14 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Imc"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
@@ -59,7 +61,8 @@
         <activity
             android:name=".Regime"
             android:label="@string/title_activity_regime"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
@@ -67,7 +70,8 @@
         <activity
             android:name=".Reseau"
             android:label="@string/title_activity_reseau"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
@@ -75,7 +79,8 @@
         <activity
             android:name=".Recette"
             android:label="@string/title_activity_recette"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
@@ -83,7 +88,8 @@
         <activity
             android:name=".Contact"
             android:label="@string/title_activity_contact"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
@@ -91,7 +97,8 @@
         <activity
             android:name=".Nutritionniste"
             android:label="@string/title_activity_nutritionniste"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
@@ -99,7 +106,8 @@
         <activity
             android:name=".Nutrition"
             android:label="@string/title_activity_nutrition"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
@@ -107,7 +115,8 @@
         <activity
             android:name=".RegimeDescription"
             android:label="@string/title_activity_desc_regime"
-            android:parentActivityName=".Regime" >
+            android:parentActivityName=".Regime"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Regime" />
@@ -115,7 +124,8 @@
         <activity
             android:name=".ContactDetails"
             android:label="@string/title_activity_contact_details"
-            android:parentActivityName=".Contact" >
+            android:parentActivityName=".Contact"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Contact" />
@@ -131,7 +141,8 @@
         <activity
             android:name=".Agenda"
             android:label="@string/title_activity_agenda"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.MainActivity" />
@@ -139,7 +150,8 @@
         <activity
             android:name=".AgendaDetails"
             android:label="@string/title_activity_agenda_details"
-            android:parentActivityName=".Agenda" >
+            android:parentActivityName=".Agenda"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Agenda" />
@@ -147,7 +159,8 @@
         <activity
             android:name=".NutrimentDetails"
             android:label="@string/title_activity_nutriment_details"
-            android:parentActivityName=".Nutrition" >
+            android:parentActivityName=".Nutrition"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Nutrition" />
@@ -155,7 +168,8 @@
         <activity
             android:name=".AlimentationDetails"
             android:label="@string/title_activity_alimentation_details"
-            android:parentActivityName=".Nutrition" >
+            android:parentActivityName=".Nutrition"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Nutrition" />
@@ -163,7 +177,8 @@
         <activity
             android:name=".RecetteDetails"
             android:label="@string/title_activity_recette_details"
-            android:parentActivityName=".Recette" >
+            android:parentActivityName=".Recette"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Recette" />

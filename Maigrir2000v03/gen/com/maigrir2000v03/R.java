@@ -489,7 +489,8 @@ containing a value of this type.
         public static final int Saison=0x7f07003b;
         public static final int Suggestion=0x7f070040;
         public static final int Temps=0x7f070035;
-        public static final int action_recette=0x7f07005d;
+        public static final int action_contact=0x7f07005d;
+        public static final int action_recette=0x7f07005e;
         public static final int action_settings=0x7f07005c;
         public static final int address=0x7f07001e;
         public static final int agenda=0x7f070050;

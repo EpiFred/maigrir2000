@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.maigrir2000v03.Recette.JSONAsyncTask;
 import com.maigrir2000v03.helper.DatabaseHandler;
 import com.maigrir2000v03.slidingmenu.adapter.ContactAdapter;
 import com.maigrir2000v03.slidingmenu.model.ContactContainer;
@@ -23,6 +24,10 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -43,6 +48,8 @@ public class Contact extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
+		
+		setupActionBar();
 
 		db = new DatabaseHandler(this);
 		ContactList = new ArrayList<ContactContainer>();
@@ -126,8 +133,10 @@ public class Contact extends Activity {
 						//contact.setMail("freddy.louvier@gmail.com");
 						contact.setMail(object.getString("ADRESSE_MAIL"));
 						contact.setImage(object.getString("PHOTO_NUT"));//EN SUSPENS JUSKA UNE IDEE MEILLEURE
+						contact.setLongitude(object.getDouble("LONGITUDE"));
+						contact.setLatitude(object.getDouble("LATITUDE"));
 						db.addContact(contact);
-						ContactList.add(contact);
+						//ContactList.add(contact);
 					}
 					return true;
 				}
@@ -151,5 +160,41 @@ public class Contact extends Activity {
 				Toast.makeText(getApplicationContext(), "Problème! Vérifiez votre connexion internet.", Toast.LENGTH_LONG).show();
 
 		}
+	}
+	/**
+	 * Set up the {@link android.app.ActionBar}.
+	 */
+	private void setupActionBar() {
+
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.contact, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			// This ID represents the Home or Up button. In the case of this
+			// activity, the Up button is shown. Use NavUtils to allow users
+			// to navigate up one level in the application structure. For
+			// more details, see the Navigation pattern on Android Design:
+			//
+			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
+			//
+			NavUtils.navigateUpFromSameTask(this);
+			return true;
+		case R.id.action_contact:
+			db.deleteAllContact();
+			new JSONAsyncTask().execute(ContactURL);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 }

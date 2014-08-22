@@ -17,6 +17,8 @@ public class ContactContainer implements Serializable {
 	private String number2;
 	private String mail;
 	private String image;
+	private Double longitude;
+	private Double latitude;
 
 	public ContactContainer(){
 
@@ -31,7 +33,7 @@ public class ContactContainer implements Serializable {
 	}
 
 	public ContactContainer(int id, String name, String surname, String address, String city, String zipcode,
-			String country, String number1, String number2, String mail, String image){
+			String country, String number1, String number2, String mail, String image, Double longitude, Double latitude){
 
 		this.id = id;
 		this.name = name;
@@ -44,6 +46,8 @@ public class ContactContainer implements Serializable {
 		this.number2 = number2;
 		this.mail = mail;
 		this.image = image;
+		this.longitude = longitude;
+		this.latitude = latitude;
 	}
 
 	public int getId() {
@@ -130,5 +134,21 @@ public class ContactContainer implements Serializable {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
+	}
+
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
 	}
 }

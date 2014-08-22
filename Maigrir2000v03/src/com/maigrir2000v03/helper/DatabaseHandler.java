@@ -38,6 +38,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String KEY_NB2 = "number2";
 	private static final String KEY_MAIL = "mail";
 	private static final String KEY_IMAGE = "image";
+	private static final String KEY_LONG = "long";
+	private static final String KEY_LAT = "lat";
+
 
 	private static final String KEY_ID2 = "id";
 	private static final String KEY_TITRE = "titre";
@@ -68,7 +71,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 					+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
 					+ KEY_SURNAME + " TEXT," + KEY_ADDRESS + " TEXT," 
 					+ KEY_CITY + " TEXT," +KEY_ZIPCODE + " TEXT," +KEY_COUNTRY + " TEXT," 
-					+ KEY_NB1 + " TEXT," + KEY_NB2 + " TEXT," +KEY_MAIL + " TEXT," +KEY_IMAGE + " TEXT" + ")";
+					+ KEY_NB1 + " TEXT," + KEY_NB2 + " TEXT," +KEY_MAIL + " TEXT," +KEY_IMAGE + " TEXT," + KEY_LONG + " DOUBLE," + KEY_LAT + " DOUBLE" + ")";
 
 			String CREATE_RECETTES_TABLE = "CREATE TABLE " + TABLE_RECETTES + "("
 					+ KEY_ID2 + " INTEGER PRIMARY KEY," + KEY_TITRE + " TEXT," + KEY_CATEGORIE + " TEXT," + KEY_DESC + " TEXT,"
@@ -123,6 +126,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 			values.put(KEY_NB2, contact.getNumber2()); // Contact Name
 			values.put(KEY_MAIL, contact.getMail()); // Contact Name
 			values.put(KEY_IMAGE, contact.getImage()); // Contact Name
+			values.put(KEY_LONG, contact.getLongitude()); // Contact Name
+			values.put(KEY_LAT, contact.getLatitude()); // Contact Name
 
 			// Inserting Row
 			db.insert(TABLE_CONTACTS, null, values);
@@ -142,14 +147,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-				KEY_NAME, KEY_SURNAME, KEY_ADDRESS, KEY_CITY, KEY_ZIPCODE, KEY_COUNTRY, KEY_NB1, KEY_NB2, KEY_MAIL, KEY_IMAGE }, KEY_ID + "=?",
+				KEY_NAME, KEY_SURNAME, KEY_ADDRESS, KEY_CITY, KEY_ZIPCODE, KEY_COUNTRY, KEY_NB1, KEY_NB2, KEY_MAIL, KEY_IMAGE, KEY_LONG, KEY_LAT }, KEY_ID + "=?",
 				new String[] { String.valueOf(id) }, null, null, null, null);
 		if (cursor != null)
 			cursor.moveToFirst();
 
 		ContactContainer contact = new ContactContainer(Integer.parseInt(cursor.getString(0)),
 				cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5),
-				cursor.getString(6), cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10));
+				cursor.getString(6), cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10), cursor.getDouble(11), cursor.getDouble(12));
 		// return contact
 		return contact;
 	}
@@ -178,6 +183,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				contact.setNumber2(cursor.getString(8));
 				contact.setMail(cursor.getString(9));
 				contact.setImage(cursor.getString(10));
+				contact.setLongitude(cursor.getDouble(11));
+				contact.setLatitude(cursor.getDouble(12));
 				// Adding contact to list
 				contactList.add(contact);
 			} while (cursor.moveToNext());
@@ -197,32 +204,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		// return count
 		return cursor.getCount();
 	}
-	// Updating single contact
-	public int updateContact(ContactContainer contact) {
-		SQLiteDatabase db = this.getWritableDatabase();
-
-		ContentValues values = new ContentValues();
-		values.put(KEY_NAME, contact.getName());
-		values.put(KEY_SURNAME, contact.getSurname());
-		values.put(KEY_ADDRESS, contact.getAddress());
-		values.put(KEY_CITY, contact.getCity());
-		values.put(KEY_ZIPCODE, contact.getZipcode());
-		values.put(KEY_COUNTRY, contact.getCountry());
-		values.put(KEY_NB1, contact.getNumber1());
-		values.put(KEY_NB2, contact.getNumber2());
-		values.put(KEY_MAIL, contact.getMail());
-		values.put(KEY_IMAGE, contact.getImage());
-
-		// updating row
-		return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
-				new String[] { String.valueOf(contact.getId()) });
-	}
 
 	// Deleting single contact
 	public void deleteContact(ContactContainer contact) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		db.delete(TABLE_CONTACTS, KEY_ID + " = ?",
 				new String[] { String.valueOf(contact.getId()) });
+		db.close();
+	}
+	
+	public void deleteAllContact() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.delete(TABLE_CONTACTS, null, null);
 		db.close();
 	}
 
