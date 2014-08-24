@@ -130,14 +130,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Contact" />
         </activity>
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBDZKSPxZRZIimg1q7apRATDY_090IDdlY" />
-
         <activity
             android:name=".Agenda"
             android:label="@string/title_activity_agenda"
@@ -183,6 +175,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maigrir2000v03.Recette" />
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyArqaBwry5eUp9wBsjuj36Zs0GGBmDFC-8" />
     </application>
 
 </manifest>
