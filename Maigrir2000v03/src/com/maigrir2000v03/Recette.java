@@ -103,7 +103,7 @@ public class Recette extends Activity {
 				{
 					recettes.add(db.getRecettesByCategorie(categoriesIndex[position]).get(i));
 				}
-				adapter = new RecetteAdapter(Recette.this, R.layout.view_recette, recettes);
+				adapter = new RecetteAdapter(recettes, Recette.this);
 				list.setAdapter(adapter);
 				list.setOnItemClickListener(new OnItemClickListener() {
 
@@ -251,7 +251,6 @@ public class Recette extends Activity {
              {
                  // this is your adapter that will be filtered
                  adapter.getFilter().filter(newText);
-                 System.out.println("on text chnge text: "+newText);
                  return true;
              }
              @Override
@@ -259,7 +258,6 @@ public class Recette extends Activity {
              {
                  // this is your adapter that will be filtered
                  adapter.getFilter().filter(query);
-                 System.out.println("on query submit: "+query);
                  return true;
              }
          };
