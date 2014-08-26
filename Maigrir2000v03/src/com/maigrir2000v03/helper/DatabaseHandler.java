@@ -38,8 +38,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String KEY_NB2 = "number2";
 	private static final String KEY_MAIL = "mail";
 	private static final String KEY_IMAGE = "image";
-	private static final String KEY_LAT = "lat";
 	private static final String KEY_LONG = "long";
+	private static final String KEY_LAT = "lat";
 
 
 	private static final String KEY_ID2 = "id";
@@ -71,7 +71,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 					+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
 					+ KEY_SURNAME + " TEXT," + KEY_ADDRESS + " TEXT," 
 					+ KEY_CITY + " TEXT," +KEY_ZIPCODE + " TEXT," +KEY_COUNTRY + " TEXT," 
-					+ KEY_NB1 + " TEXT," + KEY_NB2 + " TEXT," +KEY_MAIL + " TEXT," +KEY_IMAGE + " TEXT," + KEY_LAT + " DOUBLE," + KEY_LONG + " DOUBLE" + ")";
+					+ KEY_NB1 + " TEXT," + KEY_NB2 + " TEXT," +KEY_MAIL + " TEXT," +KEY_IMAGE + " TEXT," + KEY_LONG + " DOUBLE," + KEY_LAT + " DOUBLE" + ")";
 
 			String CREATE_RECETTES_TABLE = "CREATE TABLE " + TABLE_RECETTES + "("
 					+ KEY_ID2 + " INTEGER PRIMARY KEY," + KEY_TITRE + " TEXT," + KEY_CATEGORIE + " TEXT," + KEY_DESC + " TEXT,"

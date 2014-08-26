@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -25,10 +26,12 @@ import com.maigrir2000v03.helper.DatabaseHandler;
 import com.maigrir2000v03.slidingmenu.model.ContactContainer;
 
 import android.net.ParseException;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -69,6 +72,17 @@ public class Nutritionniste extends Activity {
 
 		// Move the camera instantly to Lyon with a zoom of 15.
 		gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(France, 5));
+		gmap.setOnInfoWindowClickListener(new OnInfoWindowClickListener() {
+
+			@Override
+			public void onInfoWindowClick(Marker marker) {
+				// TODO Auto-generated method stub
+				String uri = "geo:"+ marker.getPosition().latitude + "," + marker.getPosition().longitude;
+				startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+			}
+
+
+		});
 	}
 
 	class JSONAsyncTask extends AsyncTask<String, Void, Boolean> {
