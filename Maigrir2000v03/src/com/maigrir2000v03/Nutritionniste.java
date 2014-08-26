@@ -25,6 +25,9 @@ import com.maigrir2000v03.Contact.JSONAsyncTask;
 import com.maigrir2000v03.helper.DatabaseHandler;
 import com.maigrir2000v03.slidingmenu.model.ContactContainer;
 
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.ParseException;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -77,8 +80,11 @@ public class Nutritionniste extends Activity {
 			@Override
 			public void onInfoWindowClick(Marker marker) {
 				// TODO Auto-generated method stub
-				String uri = "geo:"+ marker.getPosition().latitude + "," + marker.getPosition().longitude;
-				startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+				//String uri = "geo:"+ marker.getPosition().latitude + "," + marker.getPosition().longitude;
+				startActivity(new Intent(android.content.Intent.ACTION_VIEW,  Uri.parse(
+								"http://maps.google.com/maps?" +
+								"saddr=" +
+								"&daddr=" + marker.getPosition().latitude + "," + marker.getPosition().longitude)));
 			}
 
 
