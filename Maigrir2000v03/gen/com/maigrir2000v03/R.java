@@ -494,9 +494,10 @@ containing a value of this type.
         public static final int Saison=0x7f08003a;
         public static final int Suggestion=0x7f08003f;
         public static final int Temps=0x7f080034;
-        public static final int action_contact=0x7f080060;
-        public static final int action_recette=0x7f080062;
-        public static final int action_search=0x7f080061;
+        public static final int action_contact=0x7f080061;
+        public static final int action_recette=0x7f080063;
+        public static final int action_refresh=0x7f080062;
+        public static final int action_search=0x7f080060;
         public static final int action_settings=0x7f08005f;
         public static final int address=0x7f08001d;
         public static final int agenda=0x7f080053;

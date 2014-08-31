@@ -23,14 +23,18 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -59,7 +63,7 @@ public class Contact extends Activity {
 
 		ListView listview = (ListView)findViewById(android.R.id.list);
 		ContactList = db.getAllContacts();
-		adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, ContactList);
+		adapter = new ContactAdapter(ContactList, Contact.this);
 
 		//adapter = new ContactAdapter(getApplicationContext(), R.layout.view_contact, ContactList);
 
@@ -174,8 +178,35 @@ public class Contact extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.contact, menu);
-		return true;
+				MenuInflater inflater = getMenuInflater();
+		        inflater.inflate(R.menu.contact, menu);
+
+		         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+
+		             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+		             //searchView.setIconifiedByDefault(false);  
+
+		         SearchView.OnQueryTextListener textChangeListener = new SearchView.OnQueryTextListener()
+		         {
+		             @Override
+		             public boolean onQueryTextChange(String newText)
+		             {
+		                 // this is your adapter that will be filtered
+		                 adapter.getFilter().filter(newText);
+		                 return true;
+		             }
+		             @Override
+		             public boolean onQueryTextSubmit(String query)
+		             {
+		                 // this is your adapter that will be filtered
+		                 adapter.getFilter().filter(query);
+		                 return true;
+		             }
+		         };
+		         searchView.setOnQueryTextListener(textChangeListener);
+
+		         return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override

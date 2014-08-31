@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 		// Photos
 		navDrawerItems.add(new NavDrawerItem("About", R.drawable.about));
 		// Communities, Will add a counter here
-		navDrawerItems.add(new NavDrawerItem("Settings", R.drawable.ic_action_settings));
+		//navDrawerItems.add(new NavDrawerItem("Settings", R.drawable.ic_action_settings));
 
 
 		// Recycle the typed array

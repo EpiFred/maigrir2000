@@ -67,8 +67,8 @@ public class Nutritionniste extends Activity {
 
 		if (db.getAllContacts().isEmpty() == true)
 			new JSONAsyncTask().execute(ContactURL);
-		
-		
+
+
 		contacts = db.getAllContacts();
 		for(int i = 0; i < contacts.size(); i++)
 		{
@@ -84,7 +84,7 @@ public class Nutritionniste extends Activity {
 				// TODO Auto-generated method stub
 				//String uri = "geo:"+ marker.getPosition().latitude + "," + marker.getPosition().longitude;
 				startActivity(new Intent(android.content.Intent.ACTION_VIEW,  Uri.parse(
-								"http://maps.google.com/maps?" +
+						"http://maps.google.com/maps?" +
 								"saddr=" +
 								"&daddr=" + marker.getPosition().latitude + "," + marker.getPosition().longitude)));
 			}
@@ -200,6 +200,11 @@ public class Nutritionniste extends Activity {
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
 			NavUtils.navigateUpFromSameTask(this);
+			return true;
+
+		case R.id.action_refresh:
+			db.deleteAllContact();
+			new JSONAsyncTask().execute(ContactURL);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
