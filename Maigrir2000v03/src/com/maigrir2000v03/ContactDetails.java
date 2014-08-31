@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,9 +36,9 @@ public class ContactDetails extends Activity {
 
 	ContactContainer contactcontainer = new ContactContainer();
 
-	private Button bFixe;
-	private Button bMobile;
-	private Button bMail;
+	private ImageButton bFixe;
+	private ImageButton bMobile;
+	private ImageButton bMail;
 	
 	ProgressDialog pd;
 	ImageView photo;
@@ -76,9 +77,9 @@ public class ContactDetails extends Activity {
 		nAddressText.setText(contactcontainer.getZipcode() + " " + contactcontainer.getCity() + ", " + contactcontainer.getCountry());
 
 		//BOUTONS APPEL FIXE MOBILE ET EMAIL\\
-		bFixe = (Button) findViewById(R.id.bFixe);
-		bMobile = (Button) findViewById(R.id.bMobile);
-		bMail = (Button) findViewById(R.id.bMail);
+		bFixe = (ImageButton) findViewById(R.id.bFixe);
+		bMobile = (ImageButton) findViewById(R.id.bMobile);
+		bMail = (ImageButton) findViewById(R.id.bMail);
 
 		//button listener Fixe
 		bFixe.setOnClickListener(new OnClickListener() {

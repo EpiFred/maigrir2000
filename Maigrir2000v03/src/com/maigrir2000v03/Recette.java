@@ -87,8 +87,9 @@ public class Recette extends Activity {
 		
 		db = new DatabaseHandler(this);
 
-		if (db.getAllRecettes().isEmpty() == true)
+		if (db.getAllRecettes().isEmpty() == true){
 			new JSONAsyncTask().execute(RecettesURL);
+		}
 
 		list = (ListView) findViewById(R.id.RecetteList);
 		

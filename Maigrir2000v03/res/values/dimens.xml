@@ -6,6 +6,7 @@
     <dimen name="big_button_height">130dp</dimen>
     <dimen name="big_button_width">160dp</dimen>
     <dimen name="small_menu_button">100dp</dimen>
+    <dimen name="verysmall_menu_button">75dp</dimen>
     <dimen name="LRspace">10dp</dimen>
     <dimen name="bannierespace">5dp</dimen>
     <dimen name="toppad">10dp</dimen>

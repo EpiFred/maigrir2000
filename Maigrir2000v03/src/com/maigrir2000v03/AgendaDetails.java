@@ -28,8 +28,8 @@ public class AgendaDetails extends Activity {
 				
 				this.setTitle(agendacontainer.getTitle());
 				
-				TextView titleText = (TextView) findViewById(R.id.title);
-				titleText.setText(agendacontainer.getTitle());
+				/*TextView titleText = (TextView) findViewById(R.id.title);
+				titleText.setText(agendacontainer.getTitle());*/
 
 				TextView desc1Text = (TextView) findViewById(R.id.desc1);
 				desc1Text.setText(agendacontainer.getDesc1());

@@ -67,6 +67,8 @@ public class Nutritionniste extends Activity {
 
 		if (db.getAllContacts().isEmpty() == true)
 			new JSONAsyncTask().execute(ContactURL);
+		
+		
 		contacts = db.getAllContacts();
 		for(int i = 0; i < contacts.size(); i++)
 		{

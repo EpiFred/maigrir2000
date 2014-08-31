@@ -53,8 +53,9 @@ public class Contact extends Activity {
 
 		db = new DatabaseHandler(this);
 		ContactList = new ArrayList<ContactContainer>();
-		if (db.getAllContacts().isEmpty() == true)
+		if (db.getAllContacts().isEmpty() == true){
 			new JSONAsyncTask().execute(ContactURL);
+		}
 
 		ListView listview = (ListView)findViewById(android.R.id.list);
 		ContactList = db.getAllContacts();

@@ -14,6 +14,8 @@ public class Reseau extends Activity {
 		setContentView(R.layout.activity_reseau);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		this.setTitle("La nutrition optimale du Dr. Brivet");
 	}
 
 	/**
