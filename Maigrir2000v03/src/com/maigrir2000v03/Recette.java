@@ -48,11 +48,11 @@ public class Recette extends Activity {
 	private ListView list;
 	private RecetteAdapter adapter;
 	private ArrayList<RecetteContainer> recettes;
-	
+
 	private DatabaseHandler db;
-	
+
 	private static final String RecettesURL = "http://goodme.fr/app/getRecipes.php";
-	
+
 	private String[] categoriesIndex = {
 			"aperitif",
 			"entree froide",
@@ -76,7 +76,7 @@ public class Recette extends Activity {
 		setContentView(R.layout.activity_recette);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		
+
 		recettes = new ArrayList<RecetteContainer>();
 
 		RecetteSpinner = (Spinner) findViewById(R.id.RecetteSpinner);
@@ -84,15 +84,16 @@ public class Recette extends Activity {
 		SpinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, RecetteSpinnerList);
 		initSpinner();
 		RecetteSpinner.setAdapter(SpinnerAdapter);
-		
+
 		db = new DatabaseHandler(this);
+		adapter = new RecetteAdapter(recettes, Recette.this);
 
 		if (db.getAllRecettes().isEmpty() == true){
 			new JSONAsyncTask().execute(RecettesURL);
 		}
 
 		list = (ListView) findViewById(R.id.RecetteList);
-		
+
 		RecetteSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
@@ -100,11 +101,13 @@ public class Recette extends Activity {
 					int position, long id) {
 				// TODO Auto-generated method stub
 				recettes.clear();
-				for (int i = 0; i < db.getRecettesByCategorie(categoriesIndex[position]).size(); i++)
+				if (db.getAllRecettes().isEmpty() == false)
 				{
-					recettes.add(db.getRecettesByCategorie(categoriesIndex[position]).get(i));
+					for (int i = 0; i < db.getRecettesByCategorie(categoriesIndex[position]).size(); i++)
+					{
+						recettes.add(db.getRecettesByCategorie(categoriesIndex[position]).get(i));
+					}
 				}
-				adapter = new RecetteAdapter(recettes, Recette.this);
 				list.setAdapter(adapter);
 				list.setOnItemClickListener(new OnItemClickListener() {
 
@@ -117,7 +120,7 @@ public class Recette extends Activity {
 						i.putExtra("recette", recette);
 						startActivity(i);
 					}
-					
+
 				});
 			}
 
@@ -237,34 +240,34 @@ public class Recette extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.recette, menu);
+		inflater.inflate(R.menu.recette, menu);
 
-         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
 
-             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-             //searchView.setIconifiedByDefault(false);  
+		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+		//searchView.setIconifiedByDefault(false);  
 
-         SearchView.OnQueryTextListener textChangeListener = new SearchView.OnQueryTextListener()
-         {
-             @Override
-             public boolean onQueryTextChange(String newText)
-             {
-                 // this is your adapter that will be filtered
-                 adapter.getFilter().filter(newText);
-                 return true;
-             }
-             @Override
-             public boolean onQueryTextSubmit(String query)
-             {
-                 // this is your adapter that will be filtered
-                 adapter.getFilter().filter(query);
-                 return true;
-             }
-         };
-         searchView.setOnQueryTextListener(textChangeListener);
+		SearchView.OnQueryTextListener textChangeListener = new SearchView.OnQueryTextListener()
+		{
+			@Override
+			public boolean onQueryTextChange(String newText)
+			{
+				// this is your adapter that will be filtered
+				adapter.getFilter().filter(newText);
+				return true;
+			}
+			@Override
+			public boolean onQueryTextSubmit(String query)
+			{
+				// this is your adapter that will be filtered
+				adapter.getFilter().filter(query);
+				return true;
+			}
+		};
+		searchView.setOnQueryTextListener(textChangeListener);
 
-         return super.onCreateOptionsMenu(menu);
+		return super.onCreateOptionsMenu(menu);
 
 	}
 
