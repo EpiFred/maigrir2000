@@ -15,7 +15,6 @@ public class Reseau extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		this.setTitle("La nutrition optimale du Dr. Brivet");
 	}
 
 	/**

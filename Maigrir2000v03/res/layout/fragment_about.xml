@@ -4,21 +4,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/page"
     android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="A propos"
-        android:textSize="26sp"
-        android:gravity="center"
-        android:textStyle="bold"
-       	android:textColor="@color/white"/>
     
     <TextView 
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="5dp"
         android:text="Version 1.0"
         android:textSize="14sp"

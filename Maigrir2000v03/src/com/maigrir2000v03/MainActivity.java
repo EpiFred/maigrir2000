@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 		// Find People
 		navDrawerItems.add(new NavDrawerItem("Facebook", R.drawable.facebook));
 		// Photos
-		navDrawerItems.add(new NavDrawerItem("About", R.drawable.about));
+		navDrawerItems.add(new NavDrawerItem("A propos", R.drawable.about));
 		// Communities, Will add a counter here
 		//navDrawerItems.add(new NavDrawerItem("Settings", R.drawable.ic_action_settings));
 

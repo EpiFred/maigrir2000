@@ -51,7 +51,7 @@
         </activity>
         <activity
             android:name=".Imc"
-            android:label="@string/app_name"
+            android:label="@string/title_activity_imc"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
